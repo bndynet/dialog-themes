@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>@bndynet/dialog-themes</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- @bndynet/dialog -->
+        <link href="https://unpkg.com/@bndynet/dialog/dist/dialog.css" rel="stylesheet" type="text/css" />
+        <script src="https://unpkg.com/@bndynet/dialog/dist/dialog.umd.js"></script>
+
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            var themes = ["dialog-dark", "default"];
+        </script>
+    </head>
+    <body>
+        <a href="https://github.com/bndynet/dialog-themes" class="forkme">
+            <img
+                width="149"
+                height="149"
+                src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
+                class="attachment-full size-full"
+                alt="Fork me on GitHub"
+                data-recalc-dims="1"
+            />
+        </a>
+
+        <div class="container">
+            <section id="examples">
+                <h1>
+                    @bndynet/dialog-themes
+                </h1>
+                <div>
+                    <select id="ddlThemes" onchange="changeTheme(this)"></select>
+                </div>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.alert("Alert Message");'
+                >
+                    Alert
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.alert("Title", "Alert Message", function(e) { alert("Clicked ok"); });'
+                >
+                    Alert with Title
+                </button>
+                <hr />
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.confirm("Confirm Message", function(e) { alert("Clicked ok"); });'
+                >
+                    Confirm
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.confirm("Title", "Confirm Message", function(e) { alert("Clicked ok"); });'
+                >
+                    Confirm with Title
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.iframe("https://bndy.net")'
+                >
+                    Open external url
+                </button>
+
+                <hr />
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.notify("Message" + Date.now())'
+                >
+                    Notify
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.notify("Message" + Date.now(), "success")'
+                >
+                    Notify Success
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.notify("Message" + Date.now(), "error")'
+                >
+                    Notify Error
+                </button>
+                <button
+                    class="btn btn-light"
+                    onclick='dialog.notify("Message" + Date.now(), "warning")'
+                >
+                    Notify Warning
+                </button>
+
+                <hr />
+                <button id="btn-loading-page" class="btn btn-light">
+                    Page Loading
+                </button>
+                <button id="btn-loading-page-with-text" class="btn btn-light">
+                    Page Loading with Text
+                </button>
+                <button id="btn-loading-element" class="btn btn-light">
+                    Data Loading
+                </button>
+                <div id="data" class="box with-border">
+                    This is a placeholder for loading data. This is a
+                    placeholder for loading data. This is a placeholder for
+                    loading data. This is a placeholder for loading data. This
+                    is a placeholder for loading data. This is a placeholder for
+                    loading data. This is a placeholder for loading data.
+                </div>
+                <script>
+                    document
+                        .getElementById("btn-loading-page")
+                        .addEventListener("click", function() {
+                            dialog.loading();
+                            setTimeout(function() {
+                                dialog.loading(false);
+                            }, 3000);
+                        });
+                    document
+                        .getElementById("btn-loading-page-with-text")
+                        .addEventListener("click", function() {
+                            dialog.loading({
+                                text: "Loading...",
+                            });
+                            setTimeout(function() {
+                                dialog.loading(false);
+                            }, 3000);
+                        });
+                    document
+                        .getElementById("btn-loading-element")
+                        .addEventListener("click", function() {
+                            var d = dialog.loading({
+                                targetEl: document.querySelector("#data"),
+                                text: "Loading...",
+                            });
+                            setTimeout(function() {
+                                d.hide();
+                            }, 3000);
+                        });
+                </script>
+            </section>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+$text-color: #dedede;
+$overlay-color: #000000;
+$modal-color: #333333;
+$loading-color: #ff0266;
+$error-color: #dc3545;
+$success-color: #28a745;
+$warning-color: #ffc107;
+$btn-primary-color: #ff0266;
+$btn-default-color: darken($modal-color, 5%);
+
+.dialog-dark {
+    /* modal */
+    .bn-modal-overlay {
+        color: $text-color;
+        background-color: rgba($overlay-color, 0.5);
+        .bn-modal {
+            background-color: $modal-color;
+            .bn-modal-header {
+                background-color: lighten($modal-color, 5%);
+                border-bottom-color: lighten($modal-color, 10%);
+                .toolbox {
+                    & > a {
+                        color: rgba($text-color, 0.5);
+                        &:hover {
+                            color: $text-color;
+                            background-color: $modal-color;
+                        }
+                    }
+                }
+            }
+
+            .bn-modal-footer {
+                .actions-container {
+                    .btn-default {
+                        color: $text-color;
+                        background-color: $btn-default-color;
+                        border-color: $btn-default-color;
+
+                        &:not(:disabled):active {
+                            color: $text-color;
+                            background-color: darken($btn-default-color, 10%);
+                            border-color: lighten($btn-default-color, 10%);
+                        }
+
+                        &:focus {
+                            box-shadow: 0 0 0 0.2rem
+                                rgba($btn-default-color, 0.5);
+                        }
+                    }
+
+                    .btn-primary {
+                        color: $text-color;
+                        background-color: $btn-primary-color;
+                        border-color: $btn-primary-color;
+
+                        &:not(:disabled):hover,
+                        &:not(:disabled):active {
+                            background-color: darken($btn-primary-color, 5%);
+                            border-color: darken($btn-primary-color, 10%);
+                        }
+
+                        &:focus {
+                            box-shadow: 0 0 0 0.2rem
+                                rgba($btn-primary-color, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* notification */
+    .bn-notification-container {
+        .notification-item {
+            &.default {
+                background-color: rgba($modal-color, 0.8);
+            }
+            &.error {
+                background-color: rgba($error-color, 0.8);
+            }
+            &.success {
+                background-color: rgba($success-color, 0.8);
+            }
+            &.warning {
+                background-color: rgba($warning-color, 0.8);
+            }
+        }
+    }
+
+    /* icons for element loading */
+    .loading-element {
+        div {
+            background-color: $text-color;
+        }
+    }
+    .bn-loading-overlay {
+        background-color: rgba($overlay-color, 0.4);
+        .bn-loading-container {
+            .bicon {
+                &.bicon-loading {
+                    border-color: rgba($loading-color, 0.5);
+                    border-left-color: $loading-color;
+                }
+            }
+
+            .loading-text {
+                color: $text-color;
+            }
+
+            &.has-text {
+                color: $text-color;
+                .bicon.bicon-loading {
+                    background-color: $overlay-color;
+                }
+            }
+        }
+    }
+
+    /* global loading */
+    & > .bn-loading-overlay {
+        background-color: rgba($overlay-color, 0.5);
+    }
+}

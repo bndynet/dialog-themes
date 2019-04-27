@@ -1,0 +1,30 @@
+.container section h1 {
+    margin: 2rem 0;
+}
+select {
+    margin-bottom: 2rem;
+}
+hr {
+    margin: 15px 0;
+}
+.forkme {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+}
+.box {
+    position: relative;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.box.with-border {
+    border: solid 1px #ddd;
+    border-radius: 5px;
+}
+
+body.dialog-dark {
+    background-color: #000000;
+    color: #dddddd;
+}
