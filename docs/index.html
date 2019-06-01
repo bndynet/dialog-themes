@@ -9,9 +9,6 @@
         <script src="https://unpkg.com/@bndynet/dialog/dist/dialog.umd.js"></script>
 
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript">
-            var themes = ["dialog-dark", "default"];
-        </script>
     </head>
     <body>
         <a href="https://github.com/bndynet/dialog-themes" class="forkme">
@@ -31,7 +28,9 @@
                     @bndynet/dialog-themes
                 </h1>
                 <div>
-                    <select id="ddlThemes" onchange="changeTheme(this)"></select>
+                    <select id="ddlThemes" onchange="changeTheme(this)">
+                        <option value="">Choose a theme</option>
+                    </select>
                 </div>
                 <button
                     class="btn btn-light"
