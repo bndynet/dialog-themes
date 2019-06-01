@@ -6,11 +6,26 @@ Themes for [@bndynet/dialog](https://github.com/bndynet/dialog)
 
 ## Usage
 
-```javascript
-dialog.setup({
-    theme: 'dialog-dark',
-    //...
-});
+```html
+<html>
+    <head>
+        <!-- required -->
+        <link href="https://unpkg.com/@bndynet/dialog/dist/dialog.css" rel="stylesheet" type="text/css" />
+        <script src="https://unpkg.com/@bndynet/dialog/dist/dialog.umd.js"></script>
+
+        <!-- themes -->
+        <link href="https://unpkg.com/@bndynet/dialog-themes/dist/dialog-dark.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <script>
+            dialog.setup({
+                theme: 'dialog-dark',
+                //...
+            });
+        </script>
+    </body>
+</html>
 ```
 
 ## Development
